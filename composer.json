@@ -1,0 +1,27 @@
+{
+    "name": "jonsa/silex-ioc",
+	"description": "IoC for Silex application",
+	"keywords": ["silex", "ioc"],
+    "type": "library",
+    "require": {
+        "silex/silex": "~2.0@dev",
+        "jonsa/pimple-ioc": "1.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonas Sandstrom",
+            "email": "jonas@sandstrom.im"
+        }
+    ],
+	"autoload": {
+		"psr-4": { "Jonsa\\": "src/Jonsa/" }
+	},
+	"autoload-dev": {
+		"psr-4": { "Test\\": "tests/Test/" }
+	},
+    "minimum-stability": "stable"
+}
