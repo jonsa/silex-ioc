@@ -15,9 +15,7 @@ class ControllerResolver extends \Silex\ControllerResolver {
 	 */
 	protected function instantiateController($class)
 	{
-		$key = $this->app[PimpleResolverServiceProvider::CLASS_RESOLVER_KEY];
-
-		return $this->app[$key]($class);
+		return $this->app[PimpleResolverServiceProvider::CLASS_RESOLVER]->resolve($class);
 	}
 
 }

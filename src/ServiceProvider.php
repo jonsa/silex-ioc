@@ -46,7 +46,7 @@ class ServiceProvider implements ServiceProviderInterface {
 		$container->extend(
 			ResolverServiceProvider::CLASS_RESOLVER,
 			function (ClassResolverContract $resolver, Container $app) {
-				$resolver->registerEventListener(function ($event, $type) use ($app) {
+				$resolver->addListener(function ($event, $type) use ($app) {
 					$app['dispatcher']->dispatch($type, new EventWrapper($event));
 				});
 

@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
         "silex/silex": "~2.0@dev",
-        "jonsa/pimple-ioc": "1.1.*"
+        "jonsa/pimple-ioc": "1.2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.*"
