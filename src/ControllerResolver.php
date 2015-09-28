@@ -6,7 +6,7 @@ use Jonsa\PimpleResolver\ServiceProvider as PimpleResolverServiceProvider;
  * Class ControllerResolver
  *
  * @package Jonsa\SilexResolver
- * @author Jonas Sandström
+ * @author Jonas SandstrÃ¶m
  */
 class ControllerResolver extends \Silex\ControllerResolver {
 

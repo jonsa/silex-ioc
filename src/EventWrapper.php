@@ -6,7 +6,7 @@ use Symfony\Component\EventDispatcher\Event;
  * Class EventWrapper
  *
  * @package Jonsa\SilexResolver
- * @author Jonas Sandström
+ * @author Jonas SandstrÃ¶m
  */
 class EventWrapper extends Event {
 

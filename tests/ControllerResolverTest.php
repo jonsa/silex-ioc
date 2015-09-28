@@ -1,4 +1,4 @@
-<?php namespace Test\Jonsa\SilexResolver;
+<?php namespace Jonsa\SilexResolver\Test;
 
 use Jonsa\PimpleResolver\Events as ResolverEvents;
 use Jonsa\PimpleResolver\ServiceProvider as ResolverServiceProvider;
@@ -10,8 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class ControllerResolverTest
  *
- * @package Test\Jonsa\SilexResolver
- * @author Jonas Sandström
+ * @package Jonsa\SilexResolver\Test
+ * @author Jonas SandstrÃ¶m
  */
 class ControllerResolverTest extends \PHPUnit_Framework_TestCase {
 
@@ -40,7 +40,7 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase {
 	public function testResolveController()
 	{
 		$resolver = new ControllerResolver($this->app);
-		$class = 'Test\\Jonsa\\SilexResolver\\Data\\IndexController';
+		$class = 'Jonsa\\SilexResolver\\Test\\Data\\IndexController';
 		$method = "$class::index";
 
 		$request = Request::create('/');
@@ -55,7 +55,7 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase {
 
 	public function testResolverEvents()
 	{
-		$class = 'Test\\Jonsa\\SilexResolver\\Data\\FooClass';
+		$class = 'Jonsa\\SilexResolver\\Test\\Data\\FooClass';
 		$count = 1;
 
 		$this->app->on(ResolverEvents::CLASS_RESOLVED, function ($event) use ($class, &$count) {

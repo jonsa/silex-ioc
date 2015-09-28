@@ -1,4 +1,4 @@
-<?php namespace Test\Jonsa\SilexResolver\Data;
+<?php namespace Jonsa\SilexResolver\Test\Data;
 
 class IndexController {
 

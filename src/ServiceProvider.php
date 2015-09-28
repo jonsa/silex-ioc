@@ -10,7 +10,7 @@ use Silex\Application;
  * Class ServiceProvider
  *
  * @package Jonsa\SilexResolver
- * @author Jonas Sandström
+ * @author Jonas SandstrÃ¶m
  */
 class ServiceProvider implements ServiceProviderInterface {
 
