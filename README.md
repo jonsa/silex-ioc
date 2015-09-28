@@ -10,15 +10,26 @@ composer require jonsa/silex-ioc
 ```
 
 ## Usage
-The class resolver is registered in Pimple as a ```ServiceProvider```
+The class resolver is registered in Silex as a ```ServiceProvider```
 ```php
 use Jonsa\PimpleResolver\ServiceProvider as PimpleResolverServiceProvider;
 use Jonsa\SilexResolver\ServiceProvider as SilexResolverServiceProvider;
-use Pimple\Container;
+use Silex\Application;
 
-$container = new Container();
-$container->register(new PimpleResolverServiceProvider());
-$container->register(new SilexResolverServiceProvider());
+$app = new Application();
+$app->register(new PimpleResolverServiceProvider());
+$app->register(new SilexResolverServiceProvider());
+```
+### Events
+All events from PimpleResolver are converted to Sympony events using a wrapper and dispatched using the Silex dispatcher.
+```php
+use Jonsa\PimpleResolver\Events as ResolverEvents;
+use Jonsa\SilexResolver\EventWrapper;
+
+$app->on(ResolverEvents::CLASS_RESOLVED, function (EventWrapper $event) {
+    $object = $event->getResolvedObject();
+    ...
+});
 ```
 
 ## Configuration
