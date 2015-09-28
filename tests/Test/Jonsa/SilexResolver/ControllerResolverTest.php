@@ -32,6 +32,11 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase {
 		$this->app->register(new ServiceProvider());
 	}
 
+	public function testControllerResolverIsOverridden()
+	{
+		$this->assertInstanceOf('Jonsa\\SilexResolver\\ControllerResolver', $this->app['resolver']);
+	}
+
 	public function testResolveController()
 	{
 		$resolver = new ControllerResolver($this->app);

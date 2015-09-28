@@ -38,12 +38,12 @@ class ServiceProvider implements ServiceProviderInterface {
 	public function register(Container $container)
 	{
 		if ($this->resolveControllers) {
-			$app['resolver'] = function (Application $app) {
+			$container['resolver'] = function (Application $app) {
 				return new ControllerResolver($app, $app['logger']);
 			};
 		}
 
-		$container[ResolverServiceProvider::CLASS_RESOLVER] = $container->extend(
+		$container->extend(
 			ResolverServiceProvider::CLASS_RESOLVER,
 			function (ClassResolverContract $resolver, Container $app) {
 				$resolver->registerEventListener(function ($event, $type) use ($app) {
