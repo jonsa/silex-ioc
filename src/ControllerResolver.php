@@ -8,14 +8,15 @@ use Jonsa\PimpleResolver\ServiceProvider as PimpleResolverServiceProvider;
  * @package Jonsa\SilexResolver
  * @author Jonas Sandström
  */
-class ControllerResolver extends \Silex\ControllerResolver {
+class ControllerResolver extends \Silex\ControllerResolver
+{
 
-	/**
-	 * {@inheritdoc}
-	 */
-	protected function instantiateController($class)
-	{
-		return $this->app[PimpleResolverServiceProvider::CLASS_RESOLVER]->resolve($class);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    protected function instantiateController($class)
+    {
+        return $this->app[PimpleResolverServiceProvider::CLASS_RESOLVER]->resolve($class);
+    }
 
 }

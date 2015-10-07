@@ -1,7 +1,7 @@
 {
     "name": "jonsa/silex-ioc",
-	"description": "IoC for Silex application",
-	"keywords": ["silex", "ioc"],
+    "description": "IoC for Silex application",
+    "keywords": ["silex", "ioc"],
     "type": "library",
     "require": {
         "silex/silex": "~2.0@dev",
@@ -17,11 +17,15 @@
             "email": "jonas@sandstrom.im"
         }
     ],
-	"autoload": {
-		"psr-4": { "Jonsa\\SilexResolver\\": "src/" }
-	},
-	"autoload-dev": {
-		"psr-4": { "Jonsa\\SilexResolver\\Test\\": "tests/" }
-	},
+    "autoload": {
+        "psr-4": {
+            "Jonsa\\SilexResolver\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jonsa\\SilexResolver\\Test\\": "tests/"
+        }
+    },
     "minimum-stability": "stable"
 }

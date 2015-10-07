@@ -1,13 +1,14 @@
 <?php namespace Jonsa\SilexResolver\Test\Data;
 
-class IndexController {
+class IndexController
+{
 
-	public function __construct(FooClass $foo)
-	{
-	}
+    public function __construct(FooClass $foo)
+    {
+    }
 
-	public function index()
-	{
-	}
+    public function index()
+    {
+    }
 
 }
