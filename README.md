@@ -21,12 +21,12 @@ $app->register(new PimpleResolverServiceProvider());
 $app->register(new SilexResolverServiceProvider());
 ```
 ### Events
-All events from PimpleResolver are converted to Sympony events using a wrapper and dispatched using the Silex dispatcher.
+The Silex event dispatcher is registered with PimpleResolver which makes it easy to inject into the resolver.
 ```php
+use Jonsa\PimpleResolver\Event\ClassResolvedEvent;
 use Jonsa\PimpleResolver\Events as ResolverEvents;
-use Jonsa\SilexResolver\EventWrapper;
 
-$app->on(ResolverEvents::CLASS_RESOLVED, function (EventWrapper $event) {
+$app->on(ResolverEvents::CLASS_RESOLVED, function (ClassResolvedEvent $event) {
     $object = $event->getResolvedObject();
     ...
 });

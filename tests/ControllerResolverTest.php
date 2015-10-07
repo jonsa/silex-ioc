@@ -1,5 +1,6 @@
 <?php namespace Jonsa\SilexResolver\Test;
 
+use Jonsa\PimpleResolver\Event\ClassResolvedEvent;
 use Jonsa\PimpleResolver\Events as ResolverEvents;
 use Jonsa\PimpleResolver\ServiceProvider as ResolverServiceProvider;
 use Jonsa\SilexResolver\ControllerResolver;
@@ -59,12 +60,14 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase
         $class = 'Jonsa\\SilexResolver\\Test\\Data\\FooClass';
         $count = 1;
 
-        $this->app->on(ResolverEvents::CLASS_RESOLVED, function ($event) use ($class, &$count) {
-            /** @var \Jonsa\PimpleResolver\Event\ClassResolvedEvent $event */
-            $this->assertInstanceOf($class, $event->getResolvedObject());
+        $this->app->on(
+            ResolverEvents::CLASS_RESOLVED,
+            function (ClassResolvedEvent $event) use ($class, &$count) {
+                $this->assertInstanceOf($class, $event->getResolvedObject());
 
-            $count++;
-        });
+                $count++;
+            }
+        );
 
         $this->app['make']($class);
 

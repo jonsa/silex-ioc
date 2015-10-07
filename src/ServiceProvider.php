@@ -1,6 +1,5 @@
 <?php namespace Jonsa\SilexResolver;
 
-use Jonsa\PimpleResolver\Contract\ClassResolver as ClassResolverContract;
 use Jonsa\PimpleResolver\ServiceProvider as ResolverServiceProvider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -44,16 +43,7 @@ class ServiceProvider implements ServiceProviderInterface
             };
         }
 
-        $container->extend(
-            ResolverServiceProvider::CLASS_RESOLVER,
-            function (ClassResolverContract $resolver, Container $app) {
-                $resolver->addListener(function ($event, $type) use ($app) {
-                    $app['dispatcher']->dispatch($type, new EventWrapper($event));
-                });
-
-                return $resolver;
-            }
-        );
+        $container[ResolverServiceProvider::EVENT_DISPATCHER] = 'dispatcher';
     }
 
 }
